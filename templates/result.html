@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Final Result</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-indigo-500 to-pink-500 min-h-screen flex items-center justify-center">
+<div class="bg-white p-8 rounded-xl shadow-lg w-2/3 animate-fadeIn">
+    <h2 class="text-3xl font-bold mb-4 text-center">Final Score</h2>
+    <p class="text-xl mb-4 text-center">Total Score: {{ total_score }}/100</p>
+    <div>
+        {% for r in results %}
+        <div class="border p-4 rounded-lg mb-3">
+            <p><strong>Question:</strong> {{ r.question }}</p>
+            <p><strong>Your Answer:</strong> {{ r.user_answer }}</p>
+            <p><strong>Correct Answer:</strong> {{ r.correct_answer }}</p>
+            <p><strong>Score:</strong> {{ r.score }}/10</p>
+            <p><strong>Feedback:</strong> {{ r.feedback }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

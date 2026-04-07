@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>InterviewGen AI</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-gradient-to-r from-blue-400 to-purple-500 min-h-screen flex items-center justify-center">
+<div class="bg-white p-10 rounded-xl shadow-lg w-96 animate-fadeIn">
+    <h1 class="text-3xl font-bold text-center mb-6 text-purple-700">InterviewGen AI</h1>
+    <form method="POST">
+        <input name="name" type="text" placeholder="Enter Your Name" class="w-full p-3 mb-4 border rounded-lg">
+        <select name="role" class="w-full p-3 mb-4 border rounded-lg">
+            {% for role in roles %}
+            <option value="{{ role }}">{{ role.title() }}</option>
+            {% endfor %}
+        </select>
+        <input name="skill" type="text" placeholder="Your Skills" class="w-full p-3 mb-4 border rounded-lg">
+        <button type="submit" class="w-full bg-purple-600 text-white p-3 rounded-lg hover:bg-purple-700 transition">Start Interview</button>
+    </form>
+</div>
+</body>
+</html>

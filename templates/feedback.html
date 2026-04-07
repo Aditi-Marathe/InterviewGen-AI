@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Feedback</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-yellow-400 to-red-500 min-h-screen flex items-center justify-center">
+<div class="bg-white p-8 rounded-xl shadow-lg w-2/3 animate-fadeIn">
+    <h2 class="text-2xl font-bold mb-4">Feedback for Last Question</h2>
+    <p><strong>Question:</strong> {{ result.question }}</p>
+    <p><strong>Your Answer:</strong> {{ result.user_answer }}</p>
+    <p><strong>Correct Answer:</strong> {{ result.correct_answer }}</p>
+    <p><strong>Score:</strong> {{ result.score }}/10</p>
+    <p><strong>Feedback:</strong> {{ result.feedback }}</p>
+    <a href="{{ url_for('interview') }}" class="mt-4 inline-block bg-purple-600 text-white p-3 rounded-lg hover:bg-purple-700 transition">Next Question</a>
+</div>
+</body>
+</html>
