@@ -133,4 +133,6 @@ def evaluate_answer(question, user_answer):
     return round(final_score, 2), feedback, correct_answer
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    #app.run(host="0.0.0.0",port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
+    #app.run(debug=True)
